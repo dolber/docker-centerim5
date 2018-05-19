@@ -14,5 +14,5 @@ Need to create config folder
 
 and run docker images via command
 
-`docker run --rm -it -v $HOME/.centerim5:/root/.centerim5 centerim5_ubuntu:latest`
+`docker run --rm -it -v $HOME/.centerim5:/root/.centerim5 dolber/centerim5:alpine`
 
