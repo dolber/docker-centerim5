@@ -7,11 +7,7 @@ ENV LC_ALL='en_US.UTF-8'
 LABEL tags="latest 1.0.2" \
       build_ver="19-06-2018"
 
-# clone the repo before building the image:
-# git clone -b mob git+ssh://mob@repo.or.cz/srv/git/centerim5.git
-
-ADD centerim5 /usr/src/centerim5
-WORKDIR /usr/src/centerim5
+WORKDIR /root/centerim5
 
 RUN apk -U upgrade && apk add -U --no-cache \
     git libtool gettext-libs gettext-dev pidgin-dev libsigc++ libsigc++-dev \
@@ -19,7 +15,7 @@ RUN apk -U upgrade && apk add -U --no-cache \
     libpurple-oscar libpurple-xmpp libpurple-bonjour ncurses \
     && rm -rf /var/cache/apk/*
 
-RUN ./bootstrap && ./configure && make && make install
+RUN cd /root && git clone -b mob git://repo.or.cz/centerim5.git && cd /root/centerim5 \
+    && ./bootstrap && ./configure && make && make install && rm -rf /root/centerim5
 
-# ENTRYPOINT ["/usr/local/bin/centerim5"]
 CMD ["/usr/local/bin/centerim5"]
