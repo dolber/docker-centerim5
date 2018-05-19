@@ -2,9 +2,9 @@
 
 ### Supported tags and respective `Dockerfile` links:
 
-* alpine / latest [Dockerfile](https://github.com/dolber/dockerfiles/blob/master/centerim5_alpine/Dockerfile)
-* debian - [Dockerfile](https://github.com/dolber/dockerfiles/blob/master/centerim5_debian/Dockerfile)
-* ubuntu - [Dockerfile](https://github.com/dolber/dockerfiles/blob/master/centerim5_ubuntu/Dockerfile)
+* alpine / latest [Dockerfile](https://github.com/dolber/docker-centerim5/blob/master/centerim5_alpine/Dockerfile)
+* debian - [Dockerfile](https://github.com/dolber/docker-centerim5/blob/master/centerim5_debian/Dockerfile)
+* ubuntu - [Dockerfile](https://github.com/dolber/docker-centerim5/blob/master/centerim5_ubuntu/Dockerfile)
 
 ### Getting started
 
