@@ -14,7 +14,7 @@ RUN apt-get update && apt-get -y dist-upgrade && apt-get install -y \
     && echo "en_US.UTF-8 UTF-8" > /etc/locale.gen && locale-gen
 
 
-RUN cd /root && ssh-keyscan -H repo.or.cz >> ~/.ssh/known_hosts \
+RUN cd /root && mkdir -p ~/.ssh && ssh-keyscan -H repo.or.cz >> ~/.ssh/known_hosts \
     && git clone -b mob git+ssh://mob@repo.or.cz/srv/git/centerim5.git && cd /root/centerim5 \
     && ./bootstrap && ./configure && make && make install && rm -rf /root/centerim5
 
