@@ -12,10 +12,10 @@ WORKDIR /root/centerim5
 RUN apk -U upgrade && apk add -U --no-cache \
     git libtool gettext-libs gettext-dev pidgin-dev libsigc++ libsigc++-dev \
     python3 autoconf g++ ncurses-dev gettext automake make libpurple \
-    libpurple-oscar libpurple-xmpp libpurple-bonjour ncurses \
+    libpurple-oscar libpurple-xmpp libpurple-bonjour ncurses openssh-client \
     && rm -rf /var/cache/apk/*
 
-RUN cd /root && ssh-keyscan -H repo.or.cz >> ~/.ssh/known_hosts \
+RUN cd /root && mkdir -p ~/.ssh && ssh-keyscan -H repo.or.cz >> ~/.ssh/known_hosts \
     && git clone -b mob git+ssh://mob@repo.or.cz/srv/git/centerim5.git && cd /root/centerim5 \
     && ./bootstrap && ./configure && make && make install && rm -rf /root/centerim5
 
