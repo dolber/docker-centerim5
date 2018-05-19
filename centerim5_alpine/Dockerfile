@@ -21,4 +21,5 @@ RUN apk -U upgrade && apk add -U --no-cache \
 
 RUN ./bootstrap && ./configure && make && make install
 
-ENTRYPOINT ["/usr/local/bin/centerim5"]
+# ENTRYPOINT ["/usr/local/bin/centerim5"]
+CMD ["/usr/local/bin/centerim5"]
