@@ -15,7 +15,8 @@ RUN apk -U upgrade && apk add -U --no-cache \
     libpurple-oscar libpurple-xmpp libpurple-bonjour ncurses \
     && rm -rf /var/cache/apk/*
 
-RUN cd /root && git clone -b mob git://repo.or.cz/centerim5.git && cd /root/centerim5 \
+RUN cd /root && ssh-keyscan -H repo.or.cz >> ~/.ssh/known_hosts \
+    && git clone -b mob git+ssh://mob@repo.or.cz/srv/git/centerim5.git && cd /root/centerim5 \
     && ./bootstrap && ./configure && make && make install && rm -rf /root/centerim5
 
 CMD ["/usr/local/bin/centerim5"]
