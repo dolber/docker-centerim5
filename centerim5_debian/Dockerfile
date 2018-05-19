@@ -15,6 +15,6 @@ RUN apt-get update && apt-get -y dist-upgrade && apt-get -y install \
 
 RUN cd /root && mkdir -p ~/.ssh && ssh-keyscan -H repo.or.cz >> ~/.ssh/known_hosts \
     && git clone -b mob git+ssh://mob@repo.or.cz/srv/git/centerim5.git && cd /root/centerim5 \
-    && ./bootstrap && ./configure && make && make install && rm -rf /root/centerim5
+    && ./bootstrap && ./configure && make && make install && ldconfig && rm -rf /root/centerim5
 
 CMD ["/usr/local/bin/centerim5"]
