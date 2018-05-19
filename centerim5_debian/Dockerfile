@@ -10,7 +10,8 @@ LABEL tags="latest 1.0.2" \
 
 RUN apt-get update && apt-get -y dist-upgrade && apt-get -y install \
     autoconf automake libtool autopoint gettext pkg-config make g++ libglib2.0-dev libpurple-dev \
-    libsigc++-2.0-dev libncursesw5-dev locales && echo "en_US.UTF-8 UTF-8" > /etc/locale.gen && locale-gen
+    libsigc++-2.0-dev libncursesw5-dev locales openssh-client \
+    && echo "en_US.UTF-8 UTF-8" > /etc/locale.gen && locale-gen
 
 RUN cd /root && mkdir -p ~/.ssh && ssh-keyscan -H repo.or.cz >> ~/.ssh/known_hosts \
     && git clone -b mob git+ssh://mob@repo.or.cz/srv/git/centerim5.git && cd /root/centerim5 \
