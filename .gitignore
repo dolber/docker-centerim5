@@ -55,6 +55,6 @@ fabric.properties
 .idea/
 centerim5_*/logs/
 centerim5_*/centerim5/
-dockerfiles.iml
+*.iml
 
 
