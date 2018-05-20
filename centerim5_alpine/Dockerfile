@@ -9,7 +9,7 @@ LABEL tags="latest 1.0.2" \
 
 WORKDIR /root/centerim5
 
-RUN apk -U upgrade && apk add -U --no-cache \
+RUN apk --no-cache add \
     git libtool gettext-libs gettext-dev pidgin-dev libsigc++ libsigc++-dev \
     python3 autoconf g++ ncurses-dev gettext automake make libpurple \
     libpurple-oscar libpurple-xmpp libpurple-bonjour ncurses openssh-client \
